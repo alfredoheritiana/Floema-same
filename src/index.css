@@ -1,0 +1,120 @@
+@import "tailwindcss";
+
+:root {
+  --font-zimula: 'Zimula', 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+  --canvas: #f2efea;
+  --ink: #241f21;
+  --forest: #042d2b;
+  --acid: #e9e778;
+  --orange: #f76c46;
+  --sage: #bacfa3;
+  --blue: #85a1c5;
+  --sand: #c6af88;
+  --bright-ivory-25: #f9f8f6;
+  --bright-ivory-50: #f2efea;
+  --bright-ivory-100: #ebe7df;
+  --bright-ivory-200: #e4ded3;
+  --bright-ivory-300: #d2cdc4;
+  --stone-100: #e2dede;
+  --stone-300: #c3bcbb;
+  --stone-500: #988f8b;
+  --stone-600: #7a716d;
+  --stone-700: #524945;
+  --stone-800: #241f21;
+
+  --ease-floema: cubic-bezier(0.19, 1, 0.22, 1);
+}
+
+html, body {
+  font-family: var(--font-zimula);
+  background-color: var(--canvas);
+  color: var(--ink);
+  overflow-x: clip; /* clip does not create a scroll container, preserving position: sticky */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Reference typography */
+.editorial-display {
+  font-family: var(--font-zimula);
+  letter-spacing: -0.04em;
+  font-weight: 500;
+  line-height: 1.05;
+}
+
+.editorial-mono {
+  font-family: 'Space Grotesk', monospace, sans-serif;
+  letter-spacing: -0.02em;
+}
+
+/* Clean UI capsule pills */
+.floema-pill {
+  border-radius: 9999px;
+  transition: all 0.4s var(--ease-floema);
+}
+
+/* Animation utilities for the collection story */
+.collection-media {
+  will-change: clip-path, transform;
+  transition: clip-path 0.05s linear;
+}
+
+/* Scroll cues */
+@keyframes scrollLabelBob {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(5px);
+  }
+}
+
+.animate-bob {
+  animation: scrollLabelBob 2s ease-in-out infinite;
+}
+
+/* Scrollbar styles */
+::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f2efea;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #c3bcbb;
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #988f8b;
+}
+
+/* Reduced motion preference */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+  .collection-media {
+    clip-path: none !important;
+  }
+}
+
+/* Restrained header capsule focus and hover styles */
+.header-capsule-item {
+  transition: background-color 180ms ease, color 180ms ease, box-shadow 180ms ease;
+}
+.header-capsule-item:hover {
+  background-color: rgba(36, 31, 33, 0.05);
+}
+.header-capsule-item:focus-visible {
+  outline: 2px solid #241f21;
+  outline-offset: 2px;
+}
+
+

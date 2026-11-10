@@ -1,0 +1,6 @@
+{
+  "name": "Floema — Spaces for people, made for life",
+  "description": "High-fidelity reconstruction of Floema, featuring editorial product collections, sustainability, and bespoke signage and furniture.",
+  "permissions": [],
+  "capabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
